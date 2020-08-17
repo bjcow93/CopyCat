@@ -11,7 +11,7 @@ export class CopyCat extends React.Component {
                     onChange={this.props.handleChange} 
                 />
                 <img alt='cat' src='../images/cat.png' style={this.props.styles.imgStyles}/>
-                {this.props.value}
+                <p>{this.props.value}</p>
             </div>
         );
     };
