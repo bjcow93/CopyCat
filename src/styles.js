@@ -13,13 +13,13 @@ const width = '50%';
 const divStyles = {
     fontFamily: fontFamily,
     fontSize: fontSize,
+    color: color,
     backgroundColor: backgroundColor,
     minHeight: minHeight,
     display: display,
     flexDirection: flexDirection,
     alignItems: alignItems,
     justifyContent: justifyContent,
-    color: color,
 };
 
 const imgStyles = {

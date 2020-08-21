@@ -12,8 +12,12 @@ export class CopyCat extends React.Component {
                     value={this.props.value}
                     onChange={this.props.handleChange} 
                 />
-                <img alt='cat' src='../images/cat.png' style={styles.imgStyles}/>
-                <p>{this.props.value}</p>
+                <img alt='cat'
+                    src={this.props.copying ? '../images/copycat.png' : '../images/quietcat.png'}
+                    style={styles.imgStyles}
+                    onClick={this.props.toggleTape}
+                />
+                <p>{this.props.copying && this.props.value}</p>
             </div>
         );
     };
