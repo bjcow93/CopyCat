@@ -4,27 +4,30 @@ import { styles } from '../styles';
 
 export class CopyCat extends React.Component {
     render() {
+        const {name, value, handleChange, copying, toggleTape} = this.props;
         return (
             <div style={styles.divStyles}>
-                <h1 style={{ marginBottom: 80 }}>Copy Cat {this.props.name || 'Tom'}</h1>
+                <h1 style={{ marginBottom: 80 }}>Copy Cat {name || 'Tom'}</h1>
                 <input
                     type="text"
-                    value={this.props.value}
-                    onChange={this.props.handleChange} 
+                    value={value}
+                    onChange={handleChange} 
                 />
                 <img alt='cat'
-                    src={this.props.copying ? '../images/copycat.png' : '../images/quietcat.png'}
+                    src={copying ? '../images/copycat.png' : '../images/quietcat.png'}
                     style={styles.imgStyles}
-                    onClick={this.props.toggleTape}
+                    onClick={toggleTape}
                 />
-                <p>{this.props.copying && this.props.value}</p>
+                <p>{copying && value}</p>
             </div>
         );
     };
 }
 
 CopyCat.propTypes = {
-    handleChange: PropTypes.func.isRequired,
     value: PropTypes.string.isRequired,
+    handleChange: PropTypes.func.isRequired,
+    copying: PropTypes.bool.isRequired,
+    toggleTape: PropTypes.func.isRequired,
     name: PropTypes.string
 };
